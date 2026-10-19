@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0620"/>
+      <stop offset="50%" stop-color="#140a33"/>
+      <stop offset="100%" stop-color="#060212"/>
+    </linearGradient>
+    <linearGradient id="bubbleUser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="bubbleAi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e153b"/>
+      <stop offset="100%" stop-color="#120c26"/>
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Subtle Grid lines -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Glowing orb in background -->
+  <circle cx="680" cy="120" r="180" fill="#8b5cf6" opacity="0.15" filter="url(#glow)"/>
+  <circle cx="120" cy="400" r="140" fill="#38bdf8" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Chat container window -->
+  <rect x="70" y="55" width="660" height="390" rx="20" fill="rgba(15, 10, 35, 0.85)" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="70" y="55" width="660" height="52" rx="20" fill="rgba(25, 17, 56, 0.9)"/>
+  <rect x="70" y="87" width="660" height="20" fill="rgba(25, 17, 56, 0.9)"/>
+  <circle cx="102" cy="81" r="6" fill="#ef4444"/>
+  <circle cx="122" cy="81" r="6" fill="#f59e0b"/>
+  <circle cx="142" cy="81" r="6" fill="#10b981"/>
+
+  <text x="175" y="86" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700" letter-spacing="1">QA CHATBOT // HUGGING FACE &amp; OLLAMA</text>
+  <rect x="585" y="69" width="125" height="24" rx="12" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1"/>
+  <circle cx="599" cy="81" r="4" fill="#10b981"/>
+  <text x="611" y="86" fill="#34d399" font-family="monospace" font-size="11" font-weight="600">LLM ACTIVE</text>
+
+  <!-- User Message 1 -->
+  <g transform="translate(240, 130)">
+    <rect x="0" y="0" width="460" height="58" rx="16" fill="url(#bubbleUser)" filter="url(#glow)" opacity="0.95"/>
+    <text x="22" y="27" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">How do local LLMs with Ollama compare to API endpoints?</text>
+    <text x="22" y="46" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="11">User Query · Transformers Pipeline</text>
+  </g>
+
+  <!-- AI Response 1 -->
+  <g transform="translate(100, 210)">
+    <rect x="0" y="0" width="560" height="135" rx="16" fill="url(#bubbleAi)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1.2"/>
+    <circle cx="32" cy="34" r="16" fill="#8b5cf6" opacity="0.2"/>
+    <text x="26" y="39" fill="#c084fc" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">AI</text>
+    <text x="60" y="32" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13.5" font-weight="600">QA Chatbot Assistant</text>
+    <text x="60" y="49" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="10.5">Ollama Llama-3 / HF Transformers · 18ms latency</text>
+
+    <line x1="25" y1="64" x2="535" y2="64" stroke="rgba(255,255,255,0.08)"/>
+
+    <text x="25" y="88" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="13">"Local LLMs provide complete privacy, zero API costs, and low latency for offline</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.9)" font-family="system-ui, sans-serif" font-size="13">inference while maintaining high contextual accuracy on domain QA datasets."</text>
+  </g>
+
+  <!-- Input Field Mockup -->
+  <g transform="translate(100, 365)">
+    <rect x="0" y="0" width="600" height="52" rx="14" fill="rgba(8, 4, 20, 0.9)" stroke="rgba(139, 92, 246, 0.4)" stroke-width="1.5"/>
+    <text x="24" y="32" fill="rgba(255,255,255,0.4)" font-family="system-ui, sans-serif" font-size="13">Ask anything to your local intelligent assistant...</text>
+    <rect x="525" y="8" width="65" height="36" rx="10" fill="url(#neonGlow)"/>
+    <text x="545" y="31" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">Send</text>
+  </g>
+</svg>

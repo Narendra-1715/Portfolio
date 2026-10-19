@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgWork" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070314"/>
+      <stop offset="50%" stop-color="#140728"/>
+      <stop offset="100%" stop-color="#05010c"/>
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glowWork" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgWork)"/>
+
+  <!-- Subtle Neural network graph nodes in background -->
+  <g stroke="rgba(236, 72, 153, 0.2)" stroke-width="1.2">
+    <line x1="120" y1="120" x2="280" y2="80"/>
+    <line x1="280" y1="80" x2="450" y2="130"/>
+    <line x1="450" y1="130" x2="680" y2="90"/>
+    <line x1="120" y1="120" x2="240" y2="280"/>
+    <line x1="280" y1="80" x2="380" y2="240"/>
+    <line x1="450" y1="130" x2="560" y2="290"/>
+    <line x1="680" y1="90" x2="710" y2="310"/>
+  </g>
+  <circle cx="120" cy="120" r="5" fill="#ec4899"/>
+  <circle cx="280" cy="80" r="6" fill="#8b5cf6"/>
+  <circle cx="450" cy="130" r="7" fill="#3b82f6"/>
+  <circle cx="680" cy="90" r="5" fill="#06b6d4"/>
+  <circle cx="240" cy="280" r="4" fill="#a855f7"/>
+  <circle cx="380" cy="240" r="6" fill="#ec4899"/>
+  <circle cx="560" cy="290" r="5" fill="#6366f1"/>
+
+  <!-- Workbench Window Frame -->
+  <g transform="translate(70, 70)">
+    <rect x="0" y="0" width="660" height="360" rx="18" fill="rgba(12, 6, 26, 0.92)" stroke="rgba(236, 72, 153, 0.35)" stroke-width="1.5" filter="url(#glowWork)"/>
+    <!-- Header -->
+    <rect x="0" y="0" width="660" height="46" rx="18" fill="rgba(26, 12, 50, 0.95)"/>
+    <rect x="0" y="24" width="660" height="22" fill="rgba(26, 12, 50, 0.95)"/>
+    <circle cx="24" cy="23" r="5" fill="#ef4444"/>
+    <circle cx="40" cy="23" r="5" fill="#f59e0b"/>
+    <circle cx="56" cy="23" r="5" fill="#10b981"/>
+    <text x="80" y="27" fill="#ffffff" font-family="monospace" font-size="12" font-weight="700">PROMPT ENGINEERING // GENAI WORKSHOP LAB</text>
+
+    <!-- Left: Prompt Template Editor -->
+    <rect x="20" y="65" width="370" height="270" rx="12" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="35" y="95" fill="#ec4899" font-family="monospace" font-size="12">system_prompt = &quot;&quot;&quot;</text>
+    <text x="35" y="118" fill="#a78bfa" font-family="monospace" font-size="11.5">  Role: AI Solution Architect &amp; Evaluator</text>
+    <text x="35" y="138" fill="#a78bfa" font-family="monospace" font-size="11.5">  Technique: Few-Shot Chain-of-Thought</text>
+    <text x="35" y="158" fill="#a78bfa" font-family="monospace" font-size="11.5">  Constraints: Deterministic Output JSON</text>
+    <text x="35" y="180" fill="#ec4899" font-family="monospace" font-size="12">&quot;&quot;&quot;</text>
+    <text x="35" y="215" fill="#38bdf8" font-family="monospace" font-size="11.5">def run_orchestration(query, context):</text>
+    <text x="35" y="235" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="11">    tokens = tokenizer.encode(query)</text>
+    <text x="35" y="255" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="11">    response = llm.generate(prompt=formatted)</text>
+    <text x="35" y="275" fill="#34d399" font-family="monospace" font-size="11">    return validate_schema(response)</text>
+
+    <!-- Right: Parameters & Metrics Panel -->
+    <rect x="410" y="65" width="230" height="270" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="425" y="95" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Hyperparameters</text>
+
+    <text x="425" y="130" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="11">Temperature: 0.2</text>
+    <rect x="425" y="138" width="200" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="425" y="138" width="50" height="6" rx="3" fill="#ec4899"/>
+
+    <text x="425" y="170" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="11">Top_P: 0.95</text>
+    <rect x="425" y="178" width="200" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="425" y="178" width="165" height="6" rx="3" fill="#8b5cf6"/>
+
+    <text x="425" y="210" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="11">Repetition Penalty: 1.15</text>
+    <rect x="425" y="218" width="200" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="425" y="218" width="140" height="6" rx="3" fill="#3b82f6"/>
+
+    <rect x="425" y="255" width="200" height="60" rx="10" fill="url(#codeGrad)" opacity="0.2"/>
+    <rect x="425" y="255" width="200" height="60" rx="10" fill="none" stroke="rgba(236,72,153,0.4)" stroke-width="1"/>
+    <text x="440" y="280" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Context Alignment</text>
+    <text x="440" y="300" fill="#34d399" font-family="monospace" font-size="15" font-weight="bold">98.7% Verified</text>
+  </g>
+</svg>
